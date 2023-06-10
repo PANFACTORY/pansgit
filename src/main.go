@@ -4,8 +4,9 @@ import (
 	"compress/zlib"
 	"flag"
 	"fmt"
-	"io"
+	"io/ioutil"
 	"os"
+	"strings"
 )
 
 func main() {
@@ -24,5 +25,13 @@ func main() {
 	}
 	defer r.Close()
 
-	io.Copy(os.Stdout, r)
+	b, err := ioutil.ReadAll(r)
+	if err != nil {
+		panic(fmt.Sprintf("Cannot read %s.", *af))
+	}
+	defer r.Close()
+
+	s := strings.SplitAfterN(string(b), string([]byte{0}), 2)
+
+	fmt.Printf("%s", s)
 }
