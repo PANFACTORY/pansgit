@@ -56,7 +56,6 @@ func ExecuteCatFile(gitObjectId string) {
 	if err != nil {
 		panic(fmt.Sprintf("Cannot load git object %s.", gitObjectId))
 	}
-	defer r.Close()
 
 	c := bytes.SplitAfterN(b, []byte{0}, 2)[1]
 
