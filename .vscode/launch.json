@@ -5,12 +5,12 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "Run main.go",
+            "name": "cat-file",
             "type": "go",
             "request": "launch",
             "mode": "auto",
-            "program": "${workspaceRoot}/src/main.go",
-            "args": ["-f", "${input:inputString}"],
+            "program": "${workspaceRoot}/src/",
+            "args": ["cat-file", "${input:inputString}"],
             "cwd": "${workspaceRoot}/"
         }
     ],
