@@ -12,6 +12,24 @@
             "program": "${workspaceRoot}/src/",
             "args": ["cat-file", "${input:inputString}"],
             "cwd": "${workspaceRoot}/"
+        },
+        {
+            "name": "hash-object",
+            "type": "go",
+            "request": "launch",
+            "mode": "auto",
+            "program": "${workspaceRoot}/src/",
+            "args": ["hash-object", "${input:inputString}"],
+            "cwd": "${workspaceRoot}/"
+        },
+        {
+            "name": "ls-files",
+            "type": "go",
+            "request": "launch",
+            "mode": "auto",
+            "program": "${workspaceRoot}/src/",
+            "args": ["ls-files"],
+            "cwd": "${workspaceRoot}/"
         }
     ],
     "inputs": [
